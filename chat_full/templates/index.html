@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chat Web Completo</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="login" id="login">
+      <h2>💬 Chat Web</h2>
+      <input id="nick" placeholder="Seu nick">
+      <input id="password" placeholder="Senha (opcional para registro/login)">
+      <div class="row">
+        <button id="btnSignup">Registrar</button>
+        <button id="btnAuth">Autenticar</button>
+        <button id="btnConnect">Conectar (sem autenticar)</button>
+      </div>
+      <small class="hint">Se quiser usar login/senha, clique em Registrar e depois Autenticar.</small>
+    </div>
+
+    <div class="chat hidden" id="chat">
+      <div class="header">
+        <div id="me">Conectado como: <span id="myNick"></span></div>
+        <button id="btnDisconnect">Sair</button>
+      </div>
+      <div class="main">
+        <div class="messages" id="messages"></div>
+        <div class="sidebar">
+          <h4>Usuários</h4>
+          <ul id="usersList"></ul>
+        </div>
+      </div>
+      <div class="composer">
+        <button id="emojiBtn">😄</button>
+        <input id="inputMsg" placeholder="Digite sua mensagem">
+        <button id="btnSend">Enviar</button>
+      </div>
+    </div>
+  </div>
+  <script src="/static/js/chat_full.js"></script>
+</body>
+</html>
